@@ -1,0 +1,22 @@
+{
+  "name": "fullstack-chatbot",
+  "version": "1.0.0",
+  "description": "Full-stack chatbot application with React frontend and Node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "./start.sh",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "clean-ports": "lsof -ti:5001 | xargs kill -9 2>/dev/null; lsof -ti:3000 | xargs kill -9 2>/dev/null; echo 'Ports cleared'"
+  },
+  "keywords": ["chatbot", "fullstack", "react", "nodejs"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+

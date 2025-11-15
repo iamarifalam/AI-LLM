@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm run install-all
+    
+    - name: Check for .env files
+      run: |
+        if [ -f backend/.env ] || [ -f frontend/.env ]; then
+          echo "⚠️  Warning: .env files detected. Make sure they're in .gitignore!"
+          exit 1
+        else
+          echo "✅ No .env files found - good!"
+        fi
+
