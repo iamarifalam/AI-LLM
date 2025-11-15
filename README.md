@@ -37,9 +37,6 @@ A modern, production-ready full-stack chatbot application with a beautiful ChatG
 - **Ollama** - Local/Cloud LLM integration
 - **CORS** - Cross-origin resource sharing
 
-## 📸 Screenshots
-
-*Add screenshots of your application here*
 
 ## 🛠️ Installation
 
